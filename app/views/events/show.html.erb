@@ -35,9 +35,10 @@
             <div class="title-box">
               <label><%= t('photo.gallery') %></label>
             </div>
-            <div class="event-photos-gallery">
+            <div class="gallery">
               <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
             </div>
+
           </div>
         <% end %>
         <div class="event-photo-form detail-box">

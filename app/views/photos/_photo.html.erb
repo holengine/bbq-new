@@ -1,15 +1,13 @@
-<% image_title = "#{t('photo.photo')}: #{@event.title}" %>
-<% image_footer = "#{t('photo.added')}: #{render partial: 'users/user_description',
-                                    locals: { photo: photo },
-                                    class: 'description-photo'}"
-%>
+<% image_footer = "#{t('photo.added')}: #{render partial: "users/user", object: photo.user}"%>
 
-<div class="event-photo">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
-              data: { toggle: 'lightbox',
-                      title: image_title,
-                      footer: image_footer
-              },
-              class: 'col-sm-4'
-  %>
-</div>
+<% if current_user_can_edit?(photo) %>
+  <% image_footer += link_to('Удалить фотографию',
+                             event_photo_path(photo.event, photo),
+                             method: :delete,
+                             data: {confirm: t('.destroy_confirm')},
+                             class:'btn btn-danger'
+  ) %>
+<% end %>
+
+<%= link_to image_tag(photo.photo.thumb.url, content: image_footer), photo.photo.url, class: 'col-sm-4 event-photo' %>
+
