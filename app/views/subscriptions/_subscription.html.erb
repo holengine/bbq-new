@@ -9,7 +9,7 @@
       <%= link_to('',
                     event_subscription_path(subscription.event, subscription),
                     method: :delete,
-                    data: { turbo_method: :delete, confirm: t('.destroy_confirm') },
+                    data: { turbo_method: :delete, 'turbo-confirm': t('.destroy_confirm') },
                     class: 'bi bi-x-circle'
           )%>
     </p>

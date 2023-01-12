@@ -94,6 +94,8 @@ ru:
     events: 'События'
     empty: 'Пользователь пока не организовал ни одного события'
     organized: 'Организовал'
+    access: 'Доступ только по пин-коду'
+    pincode: 'Пинкод доступа'
   forms:
     delete_account: 'Удалить аккаунт'
     delete: 'Удалить'
@@ -108,12 +110,13 @@ ru:
     profile: 'Профиль'
     edit_profile: 'Редактировать профиль'
     ad_settings: 'Расширенные настройки'
-    user_description:
-      destroy_confirm: 'Вы точно хотите удалить фотографию?'
   photo:
     gallery: 'Галерея'
     added: 'Добавил'
     photo: 'Фотография с события'
+  photos:
+    photo:
+      destroy_confirm: 'Вы точно хотите удалить фотографию?'
   event_mailer:
     comment:
       title: 'Новый комментарий'

@@ -76,6 +76,7 @@ en:
     events: 'Events'
     empty: 'The user has not yet organized a single event'
     organized: 'Organized'
+    access: 'Access only by PIN code'
   forms:
     delete_account: 'Delete account'
     delete: 'Delete'
@@ -90,12 +91,13 @@ en:
     profile: 'Profile'
     edit_profile: 'Edit profile'
     ad_settings: 'Advanced settings'
-    user_description:
-      destroy_confirm: 'Do you definitely want to delete the photo?'
   photo:
     gallery: 'Gallery'
     added: 'Added'
     photo: 'Photo from the event'
+  photos:
+    photo:
+      destroy_confirm: 'Do you definitely want to delete the photo?'
   event_mailer:
     comment:
       title: 'New comment'

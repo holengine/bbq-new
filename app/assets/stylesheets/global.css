@@ -29,7 +29,7 @@
 .thumbnail {
   position: relative;
   background: transparent;
-  padding: 0;
+  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
 }

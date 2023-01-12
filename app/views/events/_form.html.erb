@@ -21,9 +21,10 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
-  <div class="form-group mb-3">
-    <%= f.label :pincode %>
-    <%= f.text_field :pincode, class: 'form-control' %>
+  <%= f.label :pincode %>
+  <div class="input-group mb-2">
+    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+    <%= f.text_field :pincode, class: 'form-control'%>
   </div>
 
   <div class="actions">
