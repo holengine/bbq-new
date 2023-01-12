@@ -1,0 +1,89 @@
+<div class="event">
+  <div class="event-info row">
+    <div class="col-md-12">
+      <%= content_tag 'div', '',
+                      class: 'event-background',
+                      style: "background-image: url(#{event_photo(@event)})"
+      %>
+      <div class="event-info-inner row">
+        <div class="col-md-6">
+          <div class="event-description">
+            <h1><%= @event.title %></h1>
+            <h3><%= l @event.datetime, format: :short %></h3>
+            <h3>
+              <small>
+                <%= link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}", id: 'event-location' %>
+              </small>
+            </h3>
+            <p><%= @event.description %></p>
+          </div>
+          <% if current_user_can_edit?(@event) %>
+            <div class="group buffer-top buffer-bottom">
+              <%= link_to t('forms.change'), edit_event_path(@event), class: 'btn btn-primary me-2' %>
+              <%= button_to t('forms.delete'), event_path(@event), method: :delete, form: {data: {confirm: t('confirms.messages.are_you_sure_delete')}}, class: 'btn btn-danger' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-photos">
+        <% unless @event.photos.except(@new_photo).empty? %>
+          <div class="detail-box">
+            <div class="title-box">
+              <label><%= t('photo.gallery') %></label>
+            </div>
+            <div class="event-photos-gallery">
+              <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+            </div>
+          </div>
+        <% end %>
+        <div class="event-photo-form detail-box">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build } %>
+        </div>
+      </div>
+      <div class="detail-box">
+        <div class="title-box">
+          <label><%= t('comments.body') %></label>
+        </div>
+        <div class="action-box">
+          <ul class="comment-list">
+            <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+          </ul>
+          <div>
+            <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div id="map" class="map"></div>
+      <div class="detail-box">
+        <div class="event-owner title-box">
+          <h4><%= t('subscriptions.calls') %></h4>
+          <p><%= render partial: 'users/user', object: @event.user %></p>
+        </div>
+        <% unless @event.subscribers.empty? %>
+          <div class="event-subscriptions title-box">
+            <h4><%= t('subscriptions.they_will_go') %></h4>
+            <div class="subscriptions">
+              <p>
+                <%= render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription) %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+        <% unless @event.user == current_user || @event.auth_subscribers.include?(current_user) %>
+          <div class="event-subscription-form title-box">
+            <h4><%= t('subscriptions.i_will_go') %></h4>
+            <div>
+              <%= render partial: 'subscriptions/form', locals: {subscription: @new_subscription || @event.subscriptions.build} %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      </div>
+  </div>
+</div>

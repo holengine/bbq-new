@@ -1,0 +1,20 @@
+<li>
+  <div class="user-box">
+    <% if comment.user.present? %>
+      <%= render partial: 'users/user', object: comment.user %>
+    <% else %>
+      <%= render partial: 'users/user_anonym', locals: { model: comment } %>
+    <% end %>
+  </div>
+  <div class="comment-text">
+    <p class=""><%= comment.body %></p>
+    <span class="date sub-text"><%= l comment.created_at, format: :short %></span>
+    <% if current_user_can_edit?(comment) %>
+      <%= link_to('',
+                  event_comment_path(comment.event, comment),
+                  data: { turbo_method: :delete, confirm: t('.destroy_confirm') },
+                  class:'bi bi-trash'
+          ) %>
+    <% end %>
+  </div>
+</li>

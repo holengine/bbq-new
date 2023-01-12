@@ -1,0 +1,17 @@
+<%= form_for [@event, comment], data: { turbo: false } do |f| %>
+  <div class="input-message">
+    <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+
+    <% unless user_signed_in? %>
+      <%= f.label :user_name %>
+      <div class="input-group mb-2">
+        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+        <%= f.text_field :user_name, class: 'form-control' %>
+      </div>
+    <% end %>
+    <div class="input-group">
+      <%= f.text_field :body, class: 'form-control', placeholder: I18n.t('activerecord.attributes.comment.input') %>
+      <%= f.submit t('comments.send'), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

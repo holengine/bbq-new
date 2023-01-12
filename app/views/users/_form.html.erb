@@ -1,0 +1,32 @@
+<%= form_for @user, html: { multipart: true, data: { turbo: false } } do |f| %>
+
+  <%= render "devise/shared/error_messages", resource: @user %>
+
+  <div class="form-group mb-2">
+    <%= f.label :name %>
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= f.label :email %>
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :avatar %>
+    <div class="input-group">
+      <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+      <%= f.file_field :avatar %>
+    </div>
+  </div>
+
+  <div class="actions mb-3">
+    <%= f.submit t('forms.save'), class: 'btn btn-primary' %> <%= t('forms.or') %> <%= link_to t('forms.back'), :back %>
+  </div>
+<% end %>

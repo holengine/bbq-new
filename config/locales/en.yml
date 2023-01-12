@@ -1,0 +1,113 @@
+en:
+  activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              error: 'You cannot subscribe to your own event'
+              email_error: 'User with this email is already registered'
+    attributes:
+      comment:
+        user_name: 'Name'
+        input: 'Message...'
+      subscription:
+        user_name: 'Name'
+        user_email: 'Email'
+  controllers:
+    events:
+      created: 'Event created!'
+      updated: 'Event updated!'
+      destroyed: 'Event destroyed!'
+    users:
+      updated: 'Profile updated'
+    comments:
+      destroyed: 'Comment destroyed'
+      created: 'Comment created'
+      error: 'Error with a comment'
+    subscriptions:
+      destroyed: 'The participant is unsubscribed'
+      created: 'You are signed for this event'
+      error: 'Subscription/unsubscribing did not work'
+    photos:
+      error: 'Something is wrong with the photo'
+      created: 'You added a photo to the event'
+      destroyed: 'You deleted the photo'
+  app:
+    name: 'BBQ'
+    company: 'Aleksandr Savinyh'
+  comments:
+    body: 'Comment'
+    send: 'Send'
+    comment:
+      destroy_confirm: 'Are you sure you want to delete this comment?'
+  subscriptions:
+    calls: 'Calls:'
+    they_will_go: 'They will go:'
+    i_will_go: 'I will go:'
+    subscribe: 'Subscribe'
+    subscription:
+      destroy_confirm: 'Are you sure you want to delete a subscription?'
+  errors:
+    messages:
+      not_found:
+       one: 'In form %{count} error'
+       few: 'In form %{count} errors'
+       many: 'In form %{count} errors'
+       other: 'In form %{count} errors'
+  confirms:
+    messages:
+      are_you_sure_delete: 'Definitely delete the event?'
+  registrations:
+    registration: 'Registration'
+    email_placeholder: 'example@service.com'
+    confirmation: 'Currently waiting confirmation for:'
+    password_helper: '(leave empty if you dont want to change)'
+    password_helper_placeholder:
+      one: 'at least %{count} character'
+      few: 'at least %{count} characters'
+      many: 'at least %{count} characters'
+      other: 'at least %{count} characters'
+    destroy_confirm: 'Do you definitely want to delete an account?'
+    change_password: 'Change password'
+  events:
+    edit_event: 'Edit event'
+    create_event: 'Create event'
+    events: 'Events'
+    empty: 'The user has not yet organized a single event'
+    organized: 'Organized'
+  forms:
+    delete_account: 'Delete account'
+    delete: 'Delete'
+    save: 'Save'
+    back: 'back'
+    or: 'or'
+    change: 'Change'
+  sessions:
+    log_in: 'Log in'
+    log_out: 'Log out'
+  users:
+    profile: 'Profile'
+    edit_profile: 'Edit profile'
+    ad_settings: 'Advanced settings'
+    user_description:
+      destroy_confirm: 'Do you definitely want to delete the photo?'
+  photo:
+    gallery: 'Gallery'
+    added: 'Added'
+    photo: 'Photo from the event'
+  event_mailer:
+    comment:
+      title: 'New comment'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'Will be'
+      owner: 'Owner'
+    subscription:
+      title: 'New subscription'
+      name: 'Name'
+      email: 'Email'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'Will be'
+      owner: 'Owner'

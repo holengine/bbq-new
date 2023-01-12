@@ -1,0 +1,25 @@
+.photo-form {
+  padding: 5px 10px 10px 10px;
+}
+
+.event-photos-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding-left: 10px;
+}
+
+.event-photo {
+  margin: 10px 10px 10px 0px;
+  width: 100px;
+}
+
+.modal-footer {
+  display: inline-flex;
+  font-size: smaller;
+  width: 100%;
+}
+
+.photo-loader {
+  padding: 10px 10px 0 10px;
+}

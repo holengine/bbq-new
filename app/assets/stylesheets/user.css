@@ -1,0 +1,22 @@
+.user-avatar .img-icon {
+  margin-top: -2px;
+  height: 35px;
+}
+
+.img-profile {
+  height: 120px;
+  border-radius: 50%;
+}
+
+.user {
+  text-align: center;
+  width: 50px;
+}
+
+.user-box {
+  max-width: 70px;
+}
+
+.user-name {
+  overflow-wrap: break-word;
+}

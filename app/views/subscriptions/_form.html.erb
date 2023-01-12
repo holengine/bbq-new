@@ -1,0 +1,25 @@
+<%= form_for [@event, subscription], data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
+
+    <% unless user_signed_in? %>
+      <div class="form-group mb-2">
+        <%= f.label :user_name %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+          <%= f.text_field :user_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= f.label :user_email %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <%= f.text_field :user_email, class: 'form-control' %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit t('subscriptions.subscribe'), class: 'btn btn-primary' %>
+    </div>
+<% end %>

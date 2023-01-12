@@ -1,0 +1,41 @@
+.action-box .form-group:first-child {
+  width:80%;
+}
+
+.action-box .form-group:nth-child(2) {
+  width:18%;
+}
+
+.action-box .form-group * {
+  width:100%;
+}
+
+.comment-list {
+  list-style: none;
+  max-height: 200px;
+  overflow: auto;
+  padding-top: 20px;
+  margin-left: -25px;
+}
+.comment-list li {
+  margin: 0;
+}
+.comment-list li > div {
+  display: table-cell;
+}
+
+.comment-text p {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.sub-text {
+  color:#aaa;
+  padding-left: 10px;
+  font-family: verdana;
+  font-size: 11px;
+}
+
+.input-message {
+  padding: 0 10px 10px 10px;
+}

@@ -1,0 +1,12 @@
+<div class="user">
+  <div class="user-avatar">
+    <%= image_tag(user_avatar(user), class: 'img-icon') %>
+  </div>
+  <div class="user-name">
+    <% if request.path == user_path(user) %>
+      <p><%= user.name %></p>
+    <% else %>
+      <p><%= link_to user.name, user_path(user) %></p>
+    <% end %>
+  </div>
+</div>

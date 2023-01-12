@@ -1,0 +1,131 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      photo: 'Фотография'
+    errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              error: 'Вы не можете подписаться на свое же событие'
+              email_error: 'Пользователь с таким email уже зарегистрирован'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        avatar: 'Фото профиля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+        pincode: 'Пинкод доступа'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя'
+        input: 'Сообщение...'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+      photo:
+        photo: 'Фотография с события'
+  controllers:
+    events:
+      created: 'Событие создано'
+      updated: 'Мероприятие обновлено'
+      destroyed: 'Мерпориятие удалено'
+      wrong_pincode: 'Неверный пин-код!'
+    users:
+      updated: 'Профиль обновлен'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Комментарий добавлен'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      destroyed: 'Участник отписан'
+      created: 'Вы подписаны на это событие'
+      error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+  app:
+    name: 'Шашлыки'
+    company: 'Александр Савиных'
+  comments:
+    body: 'Комментарий'
+    send: 'Отправить'
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+  subscriptions:
+    calls: 'Позвал:'
+    they_will_go: 'Пойдут:'
+    i_will_go: 'Пойду:'
+    subscribe: 'Подписаться'
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
+  errors:
+    messages:
+      not_found:
+        one: 'В вашей форме %{count} ошибка'
+        few: 'В вашей форме %{count} ошибки'
+        many: 'В вашей форме %{count} ошибок'
+  confirms:
+    messages:
+      are_you_sure_delete: 'Точно удалить событие?'
+  registrations:
+    registration: 'Регистрация'
+    email_placeholder: 'example@service.com'
+    confirmation: 'В настоящее время ждем подтверждения:'
+    password_helper: '(оставьте пустым, если не хотите менять)'
+    password_helper_placeholder:
+      one: 'от %{count} символа'
+      few: 'от %{count} символов'
+      many: 'от %{count} символов'
+    destroy_confirm: 'Вы точно хотите удалить аккаунт?'
+    change_password: 'Сменить пароль'
+  events:
+    edit_event: 'Редактировать событие'
+    create_event: 'Создать событие'
+    events: 'События'
+    empty: 'Пользователь пока не организовал ни одного события'
+    organized: 'Организовал'
+  forms:
+    delete_account: 'Удалить аккаунт'
+    delete: 'Удалить'
+    save: 'Сохранить'
+    back: 'назад'
+    or: 'или'
+    change: 'Изменить'
+  sessions:
+    log_in: 'Войти'
+    log_out: 'Выйти'
+  users:
+    profile: 'Профиль'
+    edit_profile: 'Редактировать профиль'
+    ad_settings: 'Расширенные настройки'
+    user_description:
+      destroy_confirm: 'Вы точно хотите удалить фотографию?'
+  photo:
+    gallery: 'Галерея'
+    added: 'Добавил'
+    photo: 'Фотография с события'
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'

@@ -1,0 +1,17 @@
+<div class="subscription">
+  <% if subscription.user.present? %>
+    <%= render partial: 'users/user', object: subscription.user %>
+  <% else %>
+    <%= render partial: 'users/user_anonym', locals: { model: subscription } %>
+  <% end %>
+  <% if current_user_can_edit?(subscription) %>
+    <p>
+      <%= link_to('',
+                    event_subscription_path(subscription.event, subscription),
+                    method: :delete,
+                    data: { turbo_method: :delete, confirm: t('.destroy_confirm') },
+                    class: 'bi bi-x-circle'
+          )%>
+    </p>
+  <% end %>
+</div>
