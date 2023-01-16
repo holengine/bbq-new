@@ -1,5 +1,8 @@
-ymaps = window.ymaps
-ymaps.ready(init);
+map_object = document.getElementById('map');
+
+if (map_object != undefined) {
+  ymaps.ready(init)
+}
 
 function init() {
   const myMap = new ymaps.Map('map', {

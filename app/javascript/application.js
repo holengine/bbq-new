@@ -3,7 +3,7 @@ import '@hotwired/turbo-rails'
 import './controllers'
 import * as bootstrap from "bootstrap"
 
-import './map'
-
 import 'simplelightbox'
+
+require('./map')
 require('./lightbox')
