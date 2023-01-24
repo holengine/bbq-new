@@ -5,7 +5,7 @@ set :application, "bbq"
 set :repo_url, "git@github.com:holengine/bbq-new.git"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "~/www/bbq"
+set :deploy_to, "/home/deploy/www/bbq"
 set :branch, "main"
 
 # Default value for :linked_files is []
