@@ -4,7 +4,7 @@
   <% else %>
     <%= render partial: 'users/user_anonym', locals: { model: subscription } %>
   <% end %>
-  <% if current_user_can_edit?(subscription) %>
+  <% if policy(subscription).destroy? %>
     <p>
       <%= link_to('',
                     event_subscription_path(subscription.event, subscription),

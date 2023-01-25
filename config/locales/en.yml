@@ -1,4 +1,6 @@
 en:
+  pundit:
+    default: 'You have no access!'
   activerecord:
     errors:
       models:

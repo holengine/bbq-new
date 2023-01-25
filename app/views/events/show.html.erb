@@ -17,7 +17,7 @@
             </h3>
             <p><%= @event.description %></p>
           </div>
-          <% if current_user_can_edit?(@event) %>
+          <% if policy(@event).edit? %>
             <div class="group buffer-top buffer-bottom">
               <%= link_to t('forms.change'), edit_event_path(@event), class: 'btn btn-primary me-2' %>
               <%= link_to t('forms.delete'), event_path(@event), data: {turbo_method: :delete, 'turbo-confirm': t('confirms.messages.are_you_sure_delete')}, class: 'btn btn-danger' %>
@@ -38,12 +38,13 @@
             <div class="gallery">
               <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
             </div>
-
           </div>
         <% end %>
-        <div class="event-photo-form detail-box">
-          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build } %>
-        </div>
+        <% if policy(@event.photos.except(@new_photo)).create? %>
+          <div class="event-photo-form detail-box">
+            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build } %>
+          </div>
+        <% end %>
       </div>
       <div class="detail-box">
         <div class="title-box">

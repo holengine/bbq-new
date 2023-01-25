@@ -1,6 +1,6 @@
 <% image_footer = "#{t('photo.added')}: #{render partial: "users/user", object: photo.user}"%>
 
-<% if current_user_can_edit?(photo) %>
+<% if policy(photo).destroy? %>
   <% image_footer += link_to('Удалить фотографию',
                              event_photo_path(photo.event, photo),
                              data: { 'turbo-confirm': t('.destroy_confirm'), turbo_method: :delete },

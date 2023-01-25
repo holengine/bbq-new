@@ -9,7 +9,7 @@
   <div class="comment-text">
     <p class=""><%= comment.body %></p>
     <span class="date sub-text"><%= l comment.created_at, format: :short %></span>
-    <% if current_user_can_edit?(comment) %>
+    <% if policy(comment).destroy? %>
       <%= link_to('',
                   event_comment_path(comment.event, comment),
                   data: { turbo_method: :delete, 'turbo-confirm': t('.destroy_confirm') },

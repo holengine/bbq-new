@@ -1,4 +1,7 @@
 ru:
+  pundit:
+    default: 'У вас нет доступа!'
+    wrong_pin: 'Неверный пин-код!'
   activerecord:
     models:
       user: 'Пользователь'
@@ -38,7 +41,6 @@ ru:
       created: 'Событие создано'
       updated: 'Мероприятие обновлено'
       destroyed: 'Мерпориятие удалено'
-      wrong_pincode: 'Неверный пин-код!'
     users:
       updated: 'Профиль обновлен'
     comments:

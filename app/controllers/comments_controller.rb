@@ -15,13 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    authorize(@comment)
+
     message = { notice: I18n.t('controllers.comments.destroyed') }
 
-    if current_user_can_edit?(@comment)
-      @comment.destroy!
-    else
-      message = { alert: I18n.t('controllers.comments.error') }
-    end
+    @comment.destroy!
 
     redirect_to @event, message
   end
