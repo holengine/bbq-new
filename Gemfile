@@ -24,6 +24,11 @@ gem 'rubocop', require: false
 gem 'dotenv-rails'
 
 group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "sqlite3", "~> 1.4"
+end
+
+group :development do
   gem "capistrano"
   gem "capistrano-rails"
   gem "capistrano-passenger"
@@ -31,13 +36,6 @@ group :development, :test do
   gem "capistrano-bundler"
   gem "ed25519"
   gem "bcrypt_pbkdf"
-
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "sqlite3", "~> 1.4"
-end
-
-group :development do
-  gem "web-console"
 end
 
 group :production do

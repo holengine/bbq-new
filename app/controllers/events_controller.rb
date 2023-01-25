@@ -68,11 +68,11 @@ class EventsController < ApplicationController
     end
 
     pincode = cookies.permanent["events_#{@event.id}_pincode"]
-    unless @event.pincode_valid?(pincode)
+    return if @event.pincode_valid?(pincode)
       if params[:pincode].present?
         flash.now[:alert] = I18n.t('controllers.events.wrong_pincode')
       end
       render 'password_form'
-    end
+
   end
 end
