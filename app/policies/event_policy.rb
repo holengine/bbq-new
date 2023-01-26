@@ -29,7 +29,6 @@ class EventPolicy < ApplicationPolicy
     end
 
     record.pincode_valid?(user.params[:cookies].permanent["events_#{record.id}_pincode"])
-
   end
 
   def user_is_owner_event?

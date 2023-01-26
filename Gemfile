@@ -21,7 +21,7 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'rmagick'
 gem 'rubocop', require: false
-gem 'pundit'
+gem 'pundit', require: true
 gem 'dotenv-rails'
 
 group :development, :test do
