@@ -65,7 +65,9 @@
       <div class="detail-box">
         <div class="event-owner title-box">
           <h4><%= t('subscriptions.calls') %></h4>
-          <p><%= render partial: 'users/user', object: @event.user %></p>
+          <div class="subscriptions">
+            <p><%= render partial: 'users/user', object: @event.user %></p>
+          </div>
         </div>
         <% unless @event.subscribers.empty? %>
           <div class="event-subscriptions title-box">

@@ -1,4 +1,5 @@
 .subscriptions {
-  display: inline-flex;
+  display: flex;
   text-align: center;
+  flex-wrap: wrap;
 }
