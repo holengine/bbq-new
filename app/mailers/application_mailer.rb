@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "testbbqrails@gmail.com"
+  default from: ENV["MJ_SENDER"]
   layout "mailer"
 end

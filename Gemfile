@@ -23,6 +23,7 @@ gem 'rmagick'
 gem 'rubocop', require: false
 gem 'pundit', require: true
 gem 'dotenv-rails'
+gem 'mailjet'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
