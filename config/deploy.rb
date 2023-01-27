@@ -6,7 +6,6 @@ set :repo_url, "git@github.com:holengine/bbq-new.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/www/bbq"
-set :branch, "main"
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", 'config/master.key'
@@ -14,9 +13,11 @@ append :linked_files, "config/database.yml", 'config/master.key'
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
 
+after 'deploy:restart', 'resque:restart'
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
+set :branch, "main"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

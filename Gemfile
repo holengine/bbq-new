@@ -41,6 +41,8 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
+  gem "capistrano-resque"
+
   gem "ed25519"
   gem "bcrypt_pbkdf"
   gem "letter_opener"
