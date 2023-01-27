@@ -96,5 +96,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailjet
 
-  config.action_mailer.default_url_options = { :host => 'holengine.ru' }
+  config.action_mailer.default_options  = {
+    from:  ENV['MJ_SENDER']
+  }
+  config.action_mailer.default_url_options = { :host => 'bbq.holengine.ru' }
 end
