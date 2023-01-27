@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 gem "rails", "~> 7.0.4"
+gem 'pundit', require: true
+gem 'resque'
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "jsbundling-rails"
@@ -21,7 +23,6 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'rmagick'
 gem 'rubocop', require: false
-gem 'pundit', require: true
 gem 'dotenv-rails'
 gem 'mailjet'
 
@@ -42,6 +43,7 @@ group :development do
   gem "capistrano-bundler"
   gem "ed25519"
   gem "bcrypt_pbkdf"
+  gem "letter_opener"
 end
 
 group :production do
