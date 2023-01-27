@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:holengine/bbq-new.git'
 set :deploy_to, '/home/deploy/www/bbq'
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/master.key', 'config/credentials.yml.enc'
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'vendor', 'storage'
