@@ -41,7 +41,6 @@
 
 /node_modules
 
-/config/database.yml
 /config/credentials.yml.enc
 config/application.yml
 config/initializers/carrierwave.rb
