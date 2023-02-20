@@ -1,10 +1,18 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.active_job.queue_adapter = :resque
   config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
+
+  config.action_mailer.delivery_method = :mailjet
+
+  config.action_mailer.default_options  = {
+    from: 'hi@holengine.ru'
+  }
+
+  config.action_mailer.default_url_options = { :host => 'bbq.holengine.ru' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -93,11 +101,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.delivery_method = :mailjet
-
-  config.action_mailer.default_options  = {
-    from:  ENV['MJ_SENDER']
-  }
-  config.action_mailer.default_url_options = { :host => 'bbq.holengine.ru' }
 end

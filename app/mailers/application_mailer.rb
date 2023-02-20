@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["MJ_SENDER"]
-  layout "mailer"
+  default from: 'hi@holengine.ru'
+  layout 'mailer'
 end
