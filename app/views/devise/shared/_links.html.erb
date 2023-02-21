@@ -1,7 +1,10 @@
 <%- if devise_mapping.omniauthable? && controller_name != 'passwords' %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to '', omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: 'false' }, class: 'bi bi-github btn btn-success btn-md btn-block login-button' %><br />
-  <% end %>
+  <div class="row">
+    <div class="btn-group" role="group">
+      <%= button_to '', omniauth_authorize_path(resource_name, 'github'), method: :post, data: { turbo: 'false' }, class: 'bi bi-github btn btn-success btn-md me-1' %>
+      <%= button_to '', omniauth_authorize_path(resource_name, 'google_oauth2'), method: :post, data: { turbo: 'false' }, class: 'bi bi-google btn btn-danger btn-md mb-3' %>
+    </div>
+  </div>
 <% end %>
 
 <%- if controller_name != 'sessions' %>

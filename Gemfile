@@ -26,6 +26,7 @@ gem 'rubocop', require: false
 gem 'dotenv-rails'
 gem 'mailjet'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
