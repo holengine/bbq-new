@@ -25,6 +25,8 @@ gem 'rmagick'
 gem 'rubocop', require: false
 gem 'dotenv-rails'
 gem 'mailjet'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

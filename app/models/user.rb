@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable,
+         omniauth_providers: [:github]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -16,6 +17,24 @@ class User < ApplicationRecord
   after_commit :link_subscriptions, on: :create
 
   mount_uploader :avatar, AvatarUploader
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data["email"]).first
+
+    user ||= User.create(
+      email: data["email"],
+      password: Devise.friendly_token(16)
+    )
+
+    user.name = access_token.info.name
+    user.remote_avatar_url = access_token.info.image
+    user.provider = access_token.provider
+    user.uid = access_token.uid
+    user.save
+
+    user
+  end
 
   private
 
