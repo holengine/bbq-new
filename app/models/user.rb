@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
 
   validates :name, presence: true,
-                   length: { maximum: 15 },
+                   length: { maximum: 25 },
                    uniqueness: true
 
   before_validation :set_name, on: :create
@@ -19,19 +19,16 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def self.from_omniauth(access_token)
-    data = access_token.info
-    user = User.where(email: data['email']).first
+    user = User.where(email: access_token.info.email).first
 
     user ||= User.create(
-      email: data['email'],
-      password: Devise.friendly_token(16)
+      email: access_token.info.email,
+      password: Devise.friendly_token(16),
+      name: access_token.info.name,
+      remote_avatar_url: access_token.info.image,
+      provider: access_token.provider,
+      uid: access_token.uid
     )
-
-    user.name = access_token.info.name
-    user.remote_avatar_url = access_token.info.image
-    user.provider = access_token.provider
-    user.uid = access_token.uid
-    user.save
 
     user
   end

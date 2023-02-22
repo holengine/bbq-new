@@ -1,10 +1,10 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
-    handle_auth 'Github'
+    handle_auth('Github')
   end
 
   def google_oauth2
-    handle_auth 'Google'
+    handle_auth('Google')
   end
 
   def handle_auth(kind)
