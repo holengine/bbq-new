@@ -13,16 +13,6 @@ BBQ is an application that helps to organize events. Create your own event and g
 
 ## Instructions
 
-Before launching, you need to configure `credentials.yml.enc`. To do this, delete the `config/credentials.yml.enc` file and run the command:
-
-```
-$ EDITOR="vim" rails credentials:edit
-```
-
-You can use the vim or nano editor
-
-Next, you need to run the following commands:
-
 ```bash
 $ bundle
 $ rails db:create
@@ -56,16 +46,4 @@ In the production environment, [Amazon S3](https://aws.amazon.com/ru/s3/) is use
 yc:
   access_key_id: #Your Amazon S3 access key
   secret_access_key: #Your Amazon S3 secret key
-```
-
-### Database in production
-
-In the `production` environment, you must specify the database login and password in the environment variables `DB_USER`, `DB_NAME` and `DATABASE_PASSWORD` or specify explicitly in `.env`
-
-```
-production:
-  adapter: postgresql
-  user: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  database: <%= ENV['DB_NAME'] %>
 ```
