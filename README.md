@@ -39,6 +39,13 @@ If you want to be able to log in using [GitHub OAuth](https://docs.github.com/en
   GOOGLE_ID: #Your Google application key
   GOOGLE_SECRET: #Your Google secret key
 ```
+                                                                                                                     
+If you want to send mail through the [MailJet](https://www.mailjet.com/) service, you need to add to .env:
+
+```
+MJ_APIKEY_PUBLIC: #Your MailJet public key
+MJ_APIKEY_PRIVATE: #Your MailJet private key
+```
 
 In the production environment, [Amazon S3](https://aws.amazon.com/ru/s3/) is used to store files. To configure it, add to `.env`:
 
